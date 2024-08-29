@@ -1,0 +1,133 @@
+/* Scoped variables */
+.mainbar {
+  --bg-btn-normal: #c2c2c2;
+  --bg-btn-hover: #cdcdcd;
+  --bg-btn-down: #a6a6a6;
+  --radius-btn: max(4px, calc(var(--radius)));
+  --color-btn: #272727;
+}
+
+/* Typical toolbar buttons */
+.mainbar
+  > .toolbar-mainbar
+  > .button-toolbar:not(
+    .toolbar-insideinput .button-toolbar,
+    .toolbar-divider,
+    .button-toolbar.button-circularimage,
+    .toolbar-spacer
+  ) {
+  height: 22px;
+  background-color: var(--bg-btn-normal);
+  margin-right: 0px;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3), inset 0px 1px 0px rgba(255, 255, 255, 1), inset 0px -1px 0px rgba(0, 0, 0, 0.3); */
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+/* Left button */
+.mainbar > .toolbar-mainbar > .button-toolbar.toolbar-divider + .button-toolbar,
+.mainbar > .toolbar-mainbar > .button-toolbar:first-child {
+  border-radius: var(--radius-btn) 0px 0px var(--radius-btn) !important;
+  margin-left: 4px;
+}
+
+/* Right button */
+/* Yay! Previous sibling selector! */
+.mainbar > .toolbar-mainbar > .button-toolbar:has(+ .toolbar-divider) {
+  border-radius: 0px var(--radius-btn) var(--radius-btn) 0px;
+  margin-right: 4px;
+}
+
+/* Single button */
+.mainbar
+  > .toolbar-mainbar
+  > .toolbar-divider
+  + .button-toolbar:has(+ .toolbar-divider),
+.mainbar > .toolbar-mainbar > .button-toolbar:first-child:has(+ .toolbar-divider) {
+  border-radius: var(--radius-btn) !important;
+}
+
+/* First & Last button */
+.mainbar > .toolbar-mainbar > .button-toolbar.button-toolbar:first-child {
+  margin-left: 8px;
+}
+
+.mainbar > .toolbar-mainbar > .button-toolbar.button-toolbar:last-child {
+  margin-right: 8px;
+}
+
+/* Hacking divider */
+.mainbar > .toolbar-mainbar > .toolbar-divider > button {
+  opacity: 0;
+  min-width: 0 !important;
+  width: 4px;
+}
+
+.mainbar > .toolbar-mainbar > .toolbar-divider[draggable='true'] > button {
+  opacity: 0.85;
+  min-width: 0 !important;
+  width: 4px;
+}
+
+/* Hover, active & pressed */
+.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):hover {
+  background-color: var(--bg-btn-hover) !important;
+}
+.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):active {
+  background-color: var(--bg-btn-down) !important;
+}
+
+.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider) button.button-pressed {
+  background-image: none !important;
+}
+
+.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):has(button.button-pressed) {
+  background-color: var(--bg-btn-down) !important;
+}
+
+/* Cleaning user profile */
+.mainbar > .toolbar-mainbar > .button-toolbar.button-circularimage,
+.mainbar > .toolbar-mainbar > .button-toolbar.button-circularimage:hover,
+.mainbar > .toolbar-mainbar > .button-toolbar.button-circularimage:active {
+  background-color: transparent !important;
+}
+
+/* Clear out hover and active background for inner button */
+.button-toolbar > button:hover,
+.button-toolbar > button:active {
+  background-color: transparent !important;
+}
+
+/* Button image */
+.mainbar > .toolbar-mainbar > .button-toolbar {
+  color: var(--color-btn);
+}
+.mainbar > .toolbar-mainbar > .button-toolbar .button-icon {
+  filter: drop-shadow(0px 1px 0px rgba(255, 255, 255, 1));
+}
+
+/* Disabled button shouldn't change state */
+.mainbar
+  > .toolbar-mainbar
+  > .button-toolbar:has(button[disabled]):not(.toolbar-divider):hover,
+.mainbar
+  > .toolbar-mainbar
+  > .button-toolbar:has(button[disabled]):not(.toolbar-divider):active {
+  background-color: var(--bg-btn-normal) !important;
+}
+
+
+/* Workspace button */
+
+.tabbar-workspace-button > button {
+  border-radius: 0;
+  margin-right: 2px !important;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.tabbar-workspace-button:hover > button{
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}

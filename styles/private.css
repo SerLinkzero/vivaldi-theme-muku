@@ -1,0 +1,18 @@
+/* Private */
+
+#browser:has(.UrlBar-PrivateWindowIndicator) .toolbar-mainbar {
+    background-color: var(--bg-mainbar-private) !important;
+}
+
+#browser:has(.UrlBar-PrivateWindowIndicator) .tab.active {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1),
+            var(--bg-mainbar-private)),
+        url('background.png') !important;
+    background-size: auto auto !important;
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+
+#browser:has(.UrlBar-PrivateWindowIndicator) .tabbar-wrapper {
+    background-color: var(--bg-tabbar-private) !important;
+}

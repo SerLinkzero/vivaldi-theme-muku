@@ -70,7 +70,7 @@ footer > .toolbar-statusbar {
   backdrop-filter: none !important;
 }
 
-.mainbar > .toolbar-mainbar {
+.mainbar .toolbar-mainbar {
   background-color: var(--bg-mainbar) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
 }
@@ -107,11 +107,11 @@ footer > .toolbar-statusbar {
 
 /* Extension toolbar */
 
-.mainbar > .toolbar-mainbar > .toolbar-extensions {
+.mainbar .toolbar-mainbar > .toolbar-extensions {
   background-color: transparent !important;
 }
 
-.mainbar > .toolbar-mainbar > .toolbar-extensions:before {
+.mainbar .toolbar-mainbar > .toolbar-extensions:before {
   display: none;
 }
 

@@ -8,8 +8,7 @@
 }
 
 /* Typical toolbar buttons */
-.mainbar
-  > .toolbar-mainbar
+.mainbar .toolbar-mainbar
   > .button-toolbar:not(
     .toolbar-insideinput .button-toolbar,
     .toolbar-divider,
@@ -28,70 +27,69 @@
 }
 
 /* Left button */
-.mainbar > .toolbar-mainbar > .button-toolbar.toolbar-divider + .button-toolbar,
-.mainbar > .toolbar-mainbar > .button-toolbar:first-child {
+.mainbar .toolbar-mainbar > .button-toolbar.toolbar-divider + .button-toolbar,
+.mainbar .toolbar-mainbar > .button-toolbar:first-child {
   border-radius: var(--radius-btn) 0px 0px var(--radius-btn) !important;
   margin-left: 4px;
 }
 
 /* Right button */
 /* Yay! Previous sibling selector! */
-.mainbar > .toolbar-mainbar > .button-toolbar:has(+ .toolbar-divider) {
+.mainbar .toolbar-mainbar > .button-toolbar:has(+ .toolbar-divider) {
   border-radius: 0px var(--radius-btn) var(--radius-btn) 0px;
   margin-right: 4px;
 }
 
 /* Single button */
-.mainbar
-  > .toolbar-mainbar
+.mainbar .toolbar-mainbar
   > .toolbar-divider
   + .button-toolbar:has(+ .toolbar-divider),
-.mainbar > .toolbar-mainbar > .button-toolbar:first-child:has(+ .toolbar-divider) {
+.mainbar .toolbar-mainbar > .button-toolbar:first-child:has(+ .toolbar-divider) {
   border-radius: var(--radius-btn) !important;
 }
 
 /* First & Last button */
-.mainbar > .toolbar-mainbar > .button-toolbar.button-toolbar:first-child {
+.mainbar .toolbar-mainbar > .button-toolbar.button-toolbar:first-child {
   margin-left: 8px;
 }
 
-.mainbar > .toolbar-mainbar > .button-toolbar.button-toolbar:last-child {
+.mainbar .toolbar-mainbar > .button-toolbar.button-toolbar:last-child {
   margin-right: 8px;
 }
 
 /* Hacking divider */
-.mainbar > .toolbar-mainbar > .toolbar-divider > button {
+.mainbar .toolbar-mainbar > .toolbar-divider > button {
   opacity: 0;
   min-width: 0 !important;
   width: 4px;
 }
 
-.mainbar > .toolbar-mainbar > .toolbar-divider[draggable='true'] > button {
+.mainbar .toolbar-mainbar > .toolbar-divider[draggable='true'] > button {
   opacity: 0.85;
   min-width: 0 !important;
   width: 4px;
 }
 
 /* Hover, active & pressed */
-.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):hover {
+.mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):hover {
   background-color: var(--bg-btn-hover) !important;
 }
-.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):active {
+.mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):active {
   background-color: var(--bg-btn-down) !important;
 }
 
-.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider) button.button-pressed {
+.mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider) button.button-pressed {
   background-image: none !important;
 }
 
-.mainbar > .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):has(button.button-pressed) {
+.mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):has(button.button-pressed) {
   background-color: var(--bg-btn-down) !important;
 }
 
 /* Cleaning user profile */
-.mainbar > .toolbar-mainbar > .button-toolbar.button-circularimage,
-.mainbar > .toolbar-mainbar > .button-toolbar.button-circularimage:hover,
-.mainbar > .toolbar-mainbar > .button-toolbar.button-circularimage:active {
+.mainbar .toolbar-mainbar > .button-toolbar.button-circularimage,
+.mainbar .toolbar-mainbar > .button-toolbar.button-circularimage:hover,
+.mainbar .toolbar-mainbar > .button-toolbar.button-circularimage:active {
   background-color: transparent !important;
 }
 
@@ -102,16 +100,15 @@
 }
 
 /* Button image */
-.mainbar > .toolbar-mainbar > .button-toolbar {
+.mainbar .toolbar-mainbar > .button-toolbar {
   color: var(--color-btn);
 }
-.mainbar > .toolbar-mainbar > .button-toolbar .button-icon {
+.mainbar .toolbar-mainbar > .button-toolbar .button-icon {
   filter: drop-shadow(0px 1px 0px rgba(255, 255, 255, 1));
 }
 
 /* Disabled button shouldn't change state */
-.mainbar
-  > .toolbar-mainbar
+.mainbar .toolbar-mainbar
   > .button-toolbar:has(button[disabled]):not(.toolbar-divider):hover,
 .mainbar
   > .toolbar-mainbar

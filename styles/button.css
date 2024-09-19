@@ -8,7 +8,8 @@
 }
 
 /* Typical toolbar buttons */
-.mainbar .toolbar-mainbar
+.mainbar
+  .toolbar-mainbar
   > .button-toolbar:not(
     .toolbar-insideinput .button-toolbar,
     .toolbar-divider,
@@ -41,10 +42,13 @@
 }
 
 /* Single button */
-.mainbar .toolbar-mainbar
+.mainbar
+  .toolbar-mainbar
   > .toolbar-divider
   + .button-toolbar:has(+ .toolbar-divider),
-.mainbar .toolbar-mainbar > .button-toolbar:first-child:has(+ .toolbar-divider) {
+.mainbar
+  .toolbar-mainbar
+  > .button-toolbar:first-child:has(+ .toolbar-divider) {
   border-radius: var(--radius-btn) !important;
 }
 
@@ -64,7 +68,7 @@
   width: 4px;
 }
 
-.mainbar .toolbar-mainbar > .toolbar-divider[draggable='true'] > button {
+.mainbar .toolbar-mainbar > .toolbar-divider[draggable="true"] > button {
   opacity: 0.85;
   min-width: 0 !important;
   width: 4px;
@@ -78,11 +82,16 @@
   background-color: var(--bg-btn-down) !important;
 }
 
-.mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider) button.button-pressed {
+.mainbar
+  .toolbar-mainbar
+  > .button-toolbar:not(.toolbar-divider)
+  button.button-pressed {
   background-image: none !important;
 }
 
-.mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):has(button.button-pressed) {
+.mainbar
+  .toolbar-mainbar
+  > .button-toolbar:not(.toolbar-divider):has(button.button-pressed) {
   background-color: var(--bg-btn-down) !important;
 }
 
@@ -108,14 +117,14 @@
 }
 
 /* Disabled button shouldn't change state */
-.mainbar .toolbar-mainbar
+.mainbar
+  .toolbar-mainbar
   > .button-toolbar:has(button[disabled]):not(.toolbar-divider):hover,
 .mainbar
   > .toolbar-mainbar
   > .button-toolbar:has(button[disabled]):not(.toolbar-divider):active {
   background-color: var(--bg-btn-normal) !important;
 }
-
 
 /* Workspace button */
 
@@ -125,6 +134,6 @@
   background-color: rgba(0, 0, 0, 0);
 }
 
-.tabbar-workspace-button:hover > button{
+.tabbar-workspace-button:hover > button {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }

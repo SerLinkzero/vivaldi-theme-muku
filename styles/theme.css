@@ -1,17 +1,7 @@
-@import 'button.css';
-@import 'windows_button.css';
-@import 'private.css';
-
 #browser {
   --bg-mainbar: rgba(255, 255, 255, 0.35);
   --bg-mainbar-private: rgba(86, 71, 39, 0.1);
   --bg-tabbar-private: rgba(86, 66, 39, 0.4);
-}
-
-#browser * {
-  font-family: 'Inter', 'IBM Plex Sans', 'Segoe UI', 'HarmonyOS Sans SC' !important;
-  /* Inter Character variants: cv03: 6, cv04: 9, cv05: l, cv08: I, cv09: 3, cv11: a*/
-  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv05', 'cv08', 'cv09';
 }
 
 #header,
@@ -54,7 +44,7 @@
 footer > .toolbar-statusbar {
   background-color: var(--colorAccentBg);
   /* Note: can only reference resources in the same folder. Might be Vivaldi's restrictions */
-  background-image: url('background.png') !important;
+  background-image: url("background.png") !important;
   background-size: auto auto !important;
   background-position: 0 0;
   background-repeat: repeat;
@@ -130,7 +120,7 @@ footer > .toolbar-statusbar {
 /* Tinted background for hovered toolbar buttons */
 .toolbar-extensions > .button-toolbar > button:hover:after,
 .toolbar-extensions > .button-toolbar > button:hover:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -140,7 +130,6 @@ footer > .toolbar-statusbar {
   opacity: 0.35;
   z-index: -999;
 }
-
 
 /* Tab bar */
 .tabs-top #tabs-tabbar-container #tabs-container {

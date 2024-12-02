@@ -4,7 +4,6 @@
   --btn-width: 32px;
   --circle-size: 14px;
   --transition-time: 0.1s;
-  padding-top: 4px;
 }
 
 #browser.maximized #titlebar > .window-buttongroup {

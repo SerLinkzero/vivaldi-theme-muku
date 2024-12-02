@@ -60,6 +60,10 @@ footer > .toolbar-statusbar {
   backdrop-filter: none !important;
 }
 
+.mainbar {
+  padding: 0px !important;
+}
+
 .mainbar .toolbar-mainbar {
   background-color: var(--bg-mainbar) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
@@ -132,7 +136,8 @@ footer > .toolbar-statusbar {
 }
 
 /* Tab bar */
-.tabs-top #tabs-tabbar-container #tabs-container {
+.win.tabs-top #tabs-tabbar-container #tabs-container {
+  /* Windows only */
   padding-right: 108px;
 }
 

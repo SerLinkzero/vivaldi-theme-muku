@@ -25,6 +25,7 @@
   border-top: 1px solid rgba(255, 255, 255, 1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   transition: background-color 0.2s;
+  padding-right: 0 !important;
 }
 
 /* Left button */
@@ -37,7 +38,9 @@
 /* Right button */
 /* Yay! Previous sibling selector! */
 .mainbar .toolbar-mainbar > .button-toolbar:has(+ .toolbar-divider),
-.mainbar .toolbar-mainbar > .button-toolbar:last-child {
+.mainbar .toolbar-mainbar > .button-toolbar:last-child,
+.mainbar .toolbar-mainbar > .button-toolbar:has(+ div:empty)
+ {
   border-radius: 0px var(--radius-btn) var(--radius-btn) 0px;
   margin-right: 4px;
 }
@@ -55,7 +58,8 @@
   .toolbar-mainbar
   > .button-toolbar:first-child:has(+ .toolbar-divider),
   /* Selector added for changes of Vivaldi 7.2.3621.67 */
-.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:last-child
+.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:last-child,
+.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:has(+ div:empty)
   {
   border-radius: var(--radius-btn) !important;
 }

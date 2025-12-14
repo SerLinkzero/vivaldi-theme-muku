@@ -25,6 +25,7 @@
   border-top: 1px solid rgba(255, 255, 255, 1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   transition: background-color 0.2s;
+  padding-right: 0 !important;
 }
 
 /* Left button */
@@ -36,7 +37,10 @@
 
 /* Right button */
 /* Yay! Previous sibling selector! */
-.mainbar .toolbar-mainbar > .button-toolbar:has(+ .toolbar-divider) {
+.mainbar .toolbar-mainbar > .button-toolbar:has(+ .toolbar-divider),
+.mainbar .toolbar-mainbar > .button-toolbar:last-child,
+.mainbar .toolbar-mainbar > .button-toolbar:has(+ div:empty)
+ {
   border-radius: 0px var(--radius-btn) var(--radius-btn) 0px;
   margin-right: 4px;
 }
@@ -48,8 +52,23 @@
   + .button-toolbar:has(+ .toolbar-divider),
 .mainbar
   .toolbar-mainbar
-  > .button-toolbar:first-child:has(+ .toolbar-divider) {
+  > .toolbar-divider + .button-toolbar[style*="display: none"]
+  + .button-toolbar:has(+ .toolbar-divider),
+.mainbar
+  .toolbar-mainbar
+  > .button-toolbar:first-child:has(+ .toolbar-divider),
+  /* Selector added for changes of Vivaldi 7.2.3621.67 */
+.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:last-child,
+.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:has(+ div:empty),
+.mainbar .toolbar-mainbar > .button-toolbar:only-child
+  {
   border-radius: var(--radius-btn) !important;
+}
+
+/* Fixing restart button */
+.restart .button-icon {
+  transform: scale(calc(18/22));
+  margin-left: -8px;
 }
 
 /* First & Last button */
@@ -68,11 +87,26 @@
   width: 4px;
 }
 
-.mainbar .toolbar-mainbar > .toolbar-divider[draggable="true"] > button {
-  opacity: 0.85;
-  min-width: 0 !important;
-  width: 4px;
+.mainbar .toolbar-mainbar > .toolbar-divider[draggable="true"]{
+
+  
+
+  & > button {
+    opacity: 0.85;
+    min-width: 0 !important;
+    transform: translate(3px, 0px);
+    /* width: 8px; */
+ }
+
+
 }
+
+/* Fix condition where there is a hidden element between dividers */
+/* .toolbar-divider:has(+ .button-toolbar[style*='display: none'] + .toolbar-divider) {
+    width: 0px;
+    padding-right: 0px !important;
+    margin-right: 0px;
+} */
 
 /* Hover, active & pressed */
 .mainbar .toolbar-mainbar > .button-toolbar:not(.toolbar-divider):hover {
@@ -100,6 +134,7 @@
 .mainbar .toolbar-mainbar > .button-toolbar.button-circularimage:hover,
 .mainbar .toolbar-mainbar > .button-toolbar.button-circularimage:active {
   background-color: transparent !important;
+  padding-right: 0px !important;
 }
 
 /* Clear out hover and active background for inner button */

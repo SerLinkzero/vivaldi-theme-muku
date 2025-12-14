@@ -60,6 +60,11 @@ footer > .toolbar-statusbar {
   backdrop-filter: none !important;
 }
 
+.mainbar {
+  padding: 0px !important;
+  border-bottom: none !important;
+}
+
 .mainbar .toolbar-mainbar {
   background-color: var(--bg-mainbar) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
@@ -132,8 +137,13 @@ footer > .toolbar-statusbar {
 }
 
 /* Tab bar */
-.tabs-top #tabs-tabbar-container #tabs-container {
+.win.tabs-top #tabs-tabbar-container #tabs-container {
+  /* Windows only */
   padding-right: 108px;
+}
+.mac.tabs-top #tabs-tabbar-container #tabs-container {
+  /* macOS */
+  padding-right: 8px;
 }
 
 .tabs-left #tabs-tabbar-container #tabs-container {
@@ -166,6 +176,11 @@ footer > .toolbar-statusbar {
 .UrlBar-AddressField,
 .UrlBar-SearchField {
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.OmniDropdown {
+  transform: translateY(40px);
+  padding-top: 4px !important;
 }
 
 /* Start page navbar */

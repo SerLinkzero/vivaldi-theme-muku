@@ -1,5 +1,12 @@
 #browser * {
-    font-family: "Inter", "IBM Plex Sans", "Segoe UI", "IBM Plex Sans SC", "HarmonyOS Sans SC", "Microsoft Yahei", sans-serif !important;
+
+    --inter-stack: "Inter", "IBM Plex Sans", "Segoe UI", "IBM Plex Sans SC", "HarmonyOS Sans SC", "Microsoft Yahei", sans-serif !important;
+    --lang-stack: "AT Lang Gothic", "IBM Plex Sans", "Segoe UI", "IBM Plex Sans SC", "HarmonyOS Sans SC", "Microsoft Yahei", sans-serif !important;
+    --inter-features: "cv02", "cv03", "cv04", "cv05", "cv08", "cv09";
+    --lang-features: "ss02", "ss04";
+
+    font-family: var(--lang-stack);
+    font-feature-settings: var(--lang-features);
     /* Inter Character variants: cv03: 6, cv04: 9, cv05: l, cv08: I, cv09: 3, cv11: a*/
-    font-feature-settings: "cv02", "cv03", "cv04", "cv05", "cv08", "cv09";
+    /* font-feature-settings: "cv02", "cv03", "cv04", "cv05", "cv08", "cv09"; */
   }

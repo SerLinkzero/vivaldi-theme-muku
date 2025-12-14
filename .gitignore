@@ -1,4 +1,72 @@
-# General
+# macOS specific files
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# macOS system files
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.metadata_never_index
+.fseventsd
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.save
+
+# Compiled files
+*.out
+*.class
+*.pyc
+*.pyo
+*.pyd
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.a
+*.lib
+*.obj
+*.lo
+*.la
+*.jar
+*.war
+*.ear
+*.gem
+*.ipa
+*.apk
+*.whl
+*.egg
+*.manifest
+*.app
+*.iml
+*.ipr
+*.iws

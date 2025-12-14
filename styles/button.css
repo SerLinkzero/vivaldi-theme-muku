@@ -59,9 +59,16 @@
   > .button-toolbar:first-child:has(+ .toolbar-divider),
   /* Selector added for changes of Vivaldi 7.2.3621.67 */
 .mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:last-child,
-.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:has(+ div:empty)
+.mainbar .toolbar-mainbar > .toolbar-divider + .button-toolbar:has(+ div:empty),
+.mainbar .toolbar-mainbar > .button-toolbar:only-child
   {
   border-radius: var(--radius-btn) !important;
+}
+
+/* Fixing restart button */
+.restart .button-icon {
+  transform: scale(calc(18/22));
+  margin-left: -8px;
 }
 
 /* First & Last button */
